@@ -43,6 +43,23 @@
 
 - (void)test3
 {
+    /*! 
+     
+     注意：
+     
+     1、要先导入系统库：
+     
+     EventKit.framework
+     
+     CoreGraphics.framework
+     
+     2、导入头文件：
+     
+     #import <EventKit/EventKit.h>
+     
+     */
+    
+    
     self.btn.hidden = NO;
     self.btn2.hidden = NO;
     self.datePicker.hidden = NO;
@@ -137,11 +154,11 @@
         /*! 6、设置DatePicker的允许的最大日期。 */
         NSDateComponents *dc = [[NSDateComponents alloc] init];
         dc.year = 2099;
-        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
         _datePicker.maximumDate = [gregorian dateFromComponents:dc];
         
         /*! 6.1 限定UIDatePicker的时间范围 */
-        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
         NSDate *currentDate = [NSDate date];
         NSDateComponents *comps = [[NSDateComponents alloc] init];
         comps.year = 30;
